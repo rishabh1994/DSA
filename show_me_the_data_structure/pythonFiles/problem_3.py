@@ -133,8 +133,18 @@ def test_case(a_great_sentence):
     print("The content of the encoded data is: {}\n".format(decoded_data))
 
 
+def empty_string_test_case():
+    input = ""
+    encoded_data, tree = huffman_encoding(input)
+    print(encoded_data)
+    # Since our input string is "" that is empty string. Our ouput string is also "". And we compare both below and True is printed.
+    decoded_data = huffman_decoding(encoded_data, tree)
+    print(decoded_data == input)
+
+
 if __name__ == "__main__":
     test_case("The bird is the word")
-    test_case("A")
+    # Test with same character. Here since just 1 character is there. We will just assign it 0 bit and the answer
+    # would be the number of times this character occurs in the string which is 15 here. So answer will be 15 0's.
+    test_case("AAAAAAAAAAAAAAA")
     test_case("AAAABBBBCCCCDDDD")
-

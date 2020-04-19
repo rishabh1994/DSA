@@ -81,14 +81,15 @@ def first_test_case():
 
 
 def second_test_case():
-    our_cache = LRU_Cache(5)
-    our_cache.set(1, 1)
-    our_cache.set(2, 2)
-    our_cache.set(3, 3)
-    our_cache.set(4, 4)
-    our_cache.set(5, 5)
-    our_cache.set(6, 6)
-    print(our_cache.get(1))  # Cache size exceeded 5 with our last insert. So 1 was removed.
+    our_cache = LRU_Cache(500)
+    for i in range(0, 500):
+        our_cache.set(i, i)
+    # cache of size 500 filled completely. We are checking all keys from 0 to 499. All should be cache hit and should not
+    # return -1.
+    for i in range(0, 500):
+        if our_cache.get(i) == -1:
+            print("All cache hit are expected. Exiting program")
+            exit(-1)
 
 
 def third_test_case():
