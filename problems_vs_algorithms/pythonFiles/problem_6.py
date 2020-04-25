@@ -3,8 +3,10 @@ def get_min_max(input_list):
         minimumElement = input_list[0]
         maximumElement = input_list[0]
         for i in range(1, len(input_list)):
-            minimumElement = min(minimumElement, input_list[i])
-            maximumElement = max(maximumElement, input_list[i])
+            if input_list[i] < minimumElement:
+                minimumElement = input_list[i]
+            if input_list[i] > maximumElement:
+                maximumElement = input_list[i]
         return minimumElement, maximumElement
 
     return None, None
