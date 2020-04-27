@@ -1,0 +1,20 @@
+Task0 : Get first text record and last record call.
+
+Since lists are internally implemented by array. To get any particular index, it would take O(1) time. So time complexity is constant and not dependent on the size of input.
+
+
+Task1 : Get unique telephone numbers in the records.
+
+We are using set data structure to add the telephone numbers. Adding an element to a set has a time complexity of O(1) that is it is independent of the input size. Here we are iterating over all the input lines in the file, adding the mobile number to the set one by one. So time complexity O(n) where n is the number of records in the file.
+
+Task2 : Longest time spent on the mobile
+
+Here also we iterate through the records firstly to create a map of mobile number to time spent. Here worst case for that is O(n). There are n records in the file. So creating map takes n*n = O(n^2) time complexity. After that we iterate through it once to find the key with max value that takes O(n) time. So total time complexity O(n^2).
+
+Task3 
+
+Here time complexity is (n) as we are iterating over the list of records fixed number of times only. However we are also sorting the data which takes O(nlogn) time. So overall final time complexity is O(n) + O(nlogn) that is O(nlogn).
+
+Task4
+
+Here firstly we create 4 sets which are needed for us to solve the problem. Since set addition is O(1) time. We would take O(n) time to constuct the 4 sets. Now we take the set difference which is O(size of set.) So total time complexity O(n). Here again we are sorting the results before printing. Sorting takes O(nlogn) time. So overall time complexity will be O(nlogn)
